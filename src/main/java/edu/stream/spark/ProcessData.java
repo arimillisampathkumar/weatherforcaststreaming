@@ -99,19 +99,19 @@ public class ProcessData {
 		 
 		  	
 
-			/*
-			 * Dataset<Row>
-			 * dataSet3=streamingTaskResult_1.withColumn("avg_global_temperature",
-			 * functions.avg("avg_temperature").over(
-			 * Window.partitionBy(col("datetime"))).alias("temp"))
-			 * .withColumn("temperature_change",
-			 * functions.col("avg_temperature").minus(functions.lag(col("avg_temperature"),
-			 * 120).over( Window.partitionBy(col("datetime"))).alias("temp")));
-			 * 
-			 * dataSet3.writeStream().outputMode("complete").format("console").start();
-			 */
-			 
-		
+			
+		  Dataset<Row>
+		  dataSet3=streamingTaskResult_1.withColumn("avg_global_temperature",
+				  functions.avg("avg_temperature").over(
+						  Window.partitionBy(col("datetime"))).alias("temp"))
+		  .withColumn("temperature_change",
+				  functions.col("avg_temperature").minus(functions.lag(col("avg_temperature"),
+						  120).over( Window.partitionBy(col("datetime")).orderBy(col("datetime"))).alias("temp")));
+
+		  // dataSet3.writeStream().outputMode("complete").format("console").start();
+
+
+
 	}
 
 
