@@ -111,17 +111,7 @@ public class ProcessData {
 			 * dataSet3.writeStream().outputMode("complete").format("console").start();
 			 */
 			 
-			/*
-			 * org.apache.spark.sql.AnalysisException: Non-time-based windows are not
-			 * supported on streaming DataFrames/Datasets; Window [avg(avg_temperature#62)
-			 * windowspecdefinition(datetime#78, specifiedwindowframe(RowFrame,
-			 * unboundedpreceding$(), unboundedfollowing$())) AS temp#95], [datetime#78] +-
-			 * Project [location#77, datetime#78, avg_temperature#62, temperature_diff#87,
-			 * desc#88] +- Project [location#77, datetime#78, avg_temperature#62,
-			 * CheckOverflow((promote_precision(cast(_max#64 as decimal(11,0))) -
-			 * promote_precision(cast(_min#66 as decimal(11,0)))), DecimalType(11,0), true)
-			 * AS temperature_diff#87, getFrequentDes(freq_desc)#80 AS desc#88]
-			 */
+		
 	}
 
 
